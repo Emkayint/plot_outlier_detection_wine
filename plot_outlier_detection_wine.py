@@ -26,7 +26,7 @@ xx1, yy1 = np.meshgrid(np.linspace(0, 6, 500), np.linspace(1, 4.5, 500))
 for i, (clf_name, clf) in enumerate(classifiers.items()):
   plt.figure(1)
   clf.fit(X1)
-  Z1 = clf.decison_function(np.c_[xx1.ravel(), yy1.ravel()])
+  Z1 = clf.decision_function(np.c_[xx1.ravel(), yy1.ravel()])
   Z1 = Z1.reshape(xx1.shape)
   legend1[clf_name] = plt.contour(xx1, yy1, Z1, levels=[0], linewidths=2, colors=colors[i])
 
